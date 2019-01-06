@@ -32,3 +32,5 @@ This required a few steps.
         this.setState({ colsToTableData: newData, emote: emote });
     }
 ```
+
+- Also, move any `WebSocket` logic in the constructor of `TwitchChatMonitorApp`, into `componentDidMount`. WebSocket doesn't exist on the server, and componentDidMount only gets called in the browser, so that's convenient.

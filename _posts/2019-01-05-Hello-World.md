@@ -34,3 +34,5 @@ This required a few steps.
 ```
 
 - Also, move any `WebSocket` logic in the constructor of `TwitchChatMonitorApp`, into `componentDidMount`. WebSocket doesn't exist on the server, and componentDidMount only gets called in the browser, so that's convenient.
+
+- Add the React frontend repo as a git submodule of the express backend repo. This way you are explicitly documenting the dependency (complete with commit id). This does require you to `git clone --resurse-submodules` or at least `git submodule update --init`.

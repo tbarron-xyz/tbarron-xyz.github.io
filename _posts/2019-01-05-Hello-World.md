@@ -7,7 +7,7 @@ Recently I refactored the express.js app that runs my personal website [tbarron.
 
 This required a few steps.
 
-- Creating utility functions `sendComponentAsStaticMarkup` and `sendComponentAsStringAsync` [(code)](https://github.com/tbarron-xyz/tbarron.xyz-express-server/blob/a843f26451950c526fb326c4273291ec73902bf1/util/sendComponentAsStaticMarkup.ts). These accept a React component class (and, optionally, initial props), and return a `(req, res) =>`-style Express route handler, using `ReactDOMServer.renderToStaticMarkup` and `ReactDOMServer.renderToString` respectively.
+- Creating utility functions `sendComponentAsStaticMarkup` and `sendComponentAsStringAsync` [(code)](https://github.com/tbarron-xyz/tbarron.xyz-express-server/blob/a843f26451950c526fb326c4273291ec73902bf1/util/sendComponentAsStaticMarkup.ts). These accept a React component class (and, optionally, initial props), and return a `(req, res) =>`-style Express route handler, using `ReactDOMServer.renderToStaticMarkup` and `ReactDOMServer.renderToString` respectively, which prepends a `<!DOCTYPE html>` to the body and `Content-Type: text/html` header before sending off the response. 
 
 - In `IndexRouter` which serves up the [landing page](https://tbarron.xyz/), use `sendComponentAsStaticMarkup(IndexComponent)` in place of `res.render` which uses some template engine that you've configured in Express. This page doesn't use a React frontend, we're just rendering React on the backend, so we use staticMarkup.
 

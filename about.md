@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+<!-- Some information about you! -->
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+I received my BS Mathematics from University of Kentucky in 2016, and have been working as a software engineer since. Currently located in Denver, CO.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[t@tbarron.xyz](mailto:t@tbarron.xyz)

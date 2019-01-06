@@ -18,7 +18,8 @@ This required a few steps.
 - Change `ReactDOM.render` to `ReactDOM.hydrate` in the System.js launcher for the frontend code.
 
 - In `TwitchChatMonitorApp` (frontend), in the constructor, set the initial state based on `initialState` if it exists. For me, I already have an method for this, since it's called from within the Websocket onmessage handler.
-```
+
+```typescript
     constructor(props) {
         ...
         if (this.props.initialState) {
@@ -30,4 +31,4 @@ This required a few steps.
     updateEmoteByChannel = (newData, emote: string) => {
         this.setState({ colsToTableData: newData, emote: emote });
     }
-        ```
+```
